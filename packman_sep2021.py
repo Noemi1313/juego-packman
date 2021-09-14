@@ -154,9 +154,10 @@ def move():
     for point, course in ghosts:
         if abs(pacman - point) < 20:
             return
-
-    ontimer(move, 100)
-
+    
+    # Hacer que los fantasmas vayan más rápido (100 -> 10)
+    if ghosts:
+        ontimer(move, 10)
 
 def change(x, y):
     "Change pacman aim if valid."
